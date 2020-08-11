@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Students Analysis</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/basic.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+  </head>
+  <body>
+    <%- include('partials/navbar.ejs') %>
+
+    <div
+      class="chart-container"
+      style="position: relative; height: 50vh; width: 80vw; margin-left: 5vw;"
+    >
+      <canvas id="bar-chart"></canvas>
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <!-- Axios  -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="/js/compare.js"></script>
+  </body>
+</html>

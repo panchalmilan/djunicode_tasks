@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Student</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/addStudent.css" />
+    <link rel="stylesheet" href="/css/basic.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <!-- "__dirname/public" => already used in express.static() middleware -->
+  </head>
+  <body>
+    <!-- importing navbar -->
+    <%- include('partials/navbar.ejs') %>
+
+    <div class="card w-50 mx-auto res-card">
+      <div class="card-header">
+        <div class="display-4">Add Student</div>
+      </div>
+      <div class="card-body">
+        <form method="POST" action="/student/add">
+          <div class="form-row">
+            <div class="form-group col-md-6 input-group-lg">
+              <label for="firstName"><h4 class="res-sm">First Name</h4></label>
+              <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                name="firstName"
+                placeholder="First Name"
+                required
+              />
+            </div>
+            <div class="form-group col-md-6 input-group-lg">
+              <label for="lastName"><h4 class="res-sm">Last Name</h4></label>
+              <input
+                type="text"
+                class="form-control res-input-group-sm"
+                id="lastName"
+                name="lastName"
+                placeholder="Last Name"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group col-md-7 mx-auto dash">
+            <label for="marks"><h4 class="res-sm">Marks</h4></label>
+            <div class="input-group input-group-lg">
+              <div class="input-group-prepend">
+                <div class="input-group-text">English</div>
+              </div>
+              <input
+                type="number"
+                class="form-control"
+                id="english-marks"
+                name="english"
+                placeholder="Out of 100"
+                required
+                oninput="getAverage(), checkBound()"
+              />
+            </div>
+          </div>
+          <div class="form-group col-md-7 mx-auto">
+            <div class="input-group input-group-lg">
+              <div class="input-group-prepend">
+                <div class="input-group-text">Maths</div>
+              </div>
+              <input
+                type="number"
+                class="form-control"
+                id="maths-marks"
+                name="maths"
+                placeholder="Out of 100"
+                oninput="getAverage() ,checkBound()"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group col-md-7 mx-auto">
+            <div class="input-group input-group-lg">
+              <div class="input-group-prepend">
+                <div class="input-group-text">Average</div>
+              </div>
+              <input
+                type="number"
+                class="form-control"
+                id="average-marks"
+                placeholder="Out of 100"
+                name="average"
+                readonly
+              />
+            </div>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-lg mb-4">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="/js/calcAverage.js"></script>
+  </body>
+</html>

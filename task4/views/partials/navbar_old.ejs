@@ -1,0 +1,78 @@
+<nav style="margin-bottom: 20px;">
+  <div
+    class="d-flex flex-row"
+    style="
+      background-color: rgb(250, 125, 111);
+      height: 60px;
+      font-size: 24px;
+      color: white;
+    "
+  >
+    <div
+      class="align-self-center"
+      style="margin-left: 40px; padding: 10px 20px;
+      <% if(path === '/all'){ %>
+        border-bottom: 4px solid white;
+      <% } %> "
+    >
+      <a
+        href="/student/all"
+        style="
+          <% if(path === '/all'){ %>
+            color : rgb(64, 13, 99);
+          <% } %> "
+        >All</a
+      >
+    </div>
+    <div
+      class="align-self-center"
+      style="margin-left: 40px; padding: 10px 20px;
+      <% if(path === '/compare'){ %>
+        border-bottom: 4px solid white;
+      <% } %> "
+    >
+      <a
+        href="/student/compare"
+        style="
+      <% if(path === '/compare'){ %>
+        color : rgb(64, 13, 99);
+      <% } %> "
+        >Compare</a
+      >
+    </div>
+    <div
+      class="align-self-center"
+      style="margin-left: 40px;padding: 10px 20px;
+      <% if(path === '/add'){ %>
+        border-bottom: 4px solid white;
+      <% } %> 
+      "
+    >
+      <a
+        href="/student/add"
+        style="
+      <% if(path === '/add'){ %>
+        color : rgb(64, 13, 99);
+      <% } %> "
+        >Add</a
+      >
+    </div>
+    <div
+      class="align-self-center"
+      style="margin-left: 730px; padding: 10px 20px;
+      <% if(path === '/home'){ %>
+        border-bottom: 4px solid white;
+      <% } %> 
+      "
+    >
+      <a
+        href="/home"
+        style="
+      <% if(path === '/home'){ %>
+        color : rgb(64, 13, 99);
+      <% } %> "
+        >Student Portal</a
+      >
+    </div>
+  </div>
+</nav>

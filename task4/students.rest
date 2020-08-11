@@ -1,0 +1,41 @@
+@hostname = localhost
+@port = 3000
+@host = {{hostname}}:{{port}}
+
+@baseURL = http://{{host}}
+
+# Compare all students
+GET {{baseURL}}/student/compare HTTP/1.1
+###
+
+# Read all students
+GET {{baseURL}}/student/all HTTP/1.1
+###
+
+# Get Add student page
+GET {{baseURL}}/student/add HTTP/1.1
+###
+
+# Post student info 
+POST {{baseURL}}/student/add HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+firstName=test1
+&lastName=test2
+&english=34
+&maths=76
+###
+# OR
+# Post student info [application/json]
+POST {{baseURL}}/student/add HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "test16",
+  "lastName": "test25",
+  "english": "34",
+  "maths": "76"
+}
+###
+
+
