@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All students Page</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/allStudents.css" />
+    <link rel="stylesheet" href="/css/basic.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+
+
+  </head>
+  <body>
+
+    <!-- importing navbar -->
+    <%- include('partials/navbar.ejs') %>
+
+
+    <div class="container pt-3 mx-auto">
+      <header class="display-4 mb-3 p-2">
+        All Students
+      </header>
+
+      <span style="font-size: 1rem;"><h5>Total Students: </h5><%= students.length  %></span> 
+      
+      
+      <% var end %> 
+      <% var isOdd = false %> 
+      <% var single = false %> 
+      <% if(students.length % 2 == 0){ %>
+        <% end = students.length - 1 %> 
+      <% } else { %>
+        <% end = students.length - 2 %> 
+        <% isOdd = true %> 
+        <% if(end < 0) end = 0 %> 
+      <% } %>
+
+      <% if(!single){ %> 
+        <% for(let i = 0; i < end; i += 2){ %>
+          <div class="row">
+            
+            <div class="col-sm-6">
+              <form action="/student/<%= students[i].slug %>" method="GET">
+                <div class="card border-primary">
+                  <div class="card-body">
+                    <div class="row">
+                      <h3 class="card-title bg-light col-9" style="font-size: 2.2rem;"><%= students[i].firstName %> <%= students[i].lastName %></h3>
+                      <div class="col-3" style="font-size: .8rem;">Average : <%= students[i].average  %> </div>
+                    </div>
+                    <p class="card-text" style="font-size: .8rem;"> @<%= students[i].slug  %> </p>
+    
+                    <div class="row">
+                      <div class="col-9" style="font-size: .8rem;">
+                        Created At: <%= students[i].createdAt  %> 
+                      </div>
+                      <button type="submit" class="btn btn-info col-2">Info</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="col-sm-6 mb-4">
+              <form action="/student/<%= students[i+1].slug %>" method="GET">
+                <div class="card border-primary">
+                  <div class="card-body">
+                    <div class="row">
+                      <h3 class="card-title bg-light col-9" style="font-size: 2.2rem;"><%= students[i+1].firstName %> <%= students[i+1].lastName%></h3>
+                      <div class="col-3" style="font-size: .8rem;">Average : <%= students[i+1].average  %> </div>
+                    </div>
+                    <p class="card-text" style="font-size: .8rem;"> @<%= students[i+1].slug  %> </p>
+    
+                    <div class="row">
+                      <div class="col-9" style="font-size: .8rem;">
+                        Created At: <%= students[i+1].createdAt  %> 
+                      </div>
+                      <button type="submit" class="btn btn-info col-2">Info</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            
+          </div>
+        <% } %> 
+
+        <% if(isOdd ){ %>
+          <% var ls = students.length - 1 %> 
+          <div class="row">
+            <div class="col-sm-6 mb-4">
+              <form action="/student/<%= students[ls].slug %>" method="GET">
+                <div class="card border-primary">
+                  <div class="card-body">
+                    <div class="row">
+                      <h3 class="card-title bg-light col-9" style="font-size: 2.2rem;"><%= students[ls].firstName %> <%= students[ls].lastName %></h3>
+                      <div class="col-3" style="font-size: .8rem;">Average : <%= students[ls].average  %> </div>
+                    </div>
+                    <p class="card-text" style="font-size: .8rem;"> @<%= students[ls].slug  %> </p>
+    
+                    <div class="row">
+                      <div class="col-9" style="font-size: .8rem;">
+                        Created At: <%= students[ls].createdAt  %> 
+                      </div>
+                      <button type="submit" class="btn btn-info col-2">Info</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        <% } %> 
+
+      <% } %> 
+      
+      
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <!-- <div class="row"> -->
+        <!--  -->
+
+
+        <!-- <div class="col-sm-6">
+          <form action="/student/__slug" method="GET">
+            <div class="card border-primary">
+              <div class="card-body">
+                <div class="row">
+                  <h3 class="card-title bg-light col-9"></h3>
+                  <div class="col-3">Average: 78</div>
+                </div>
+                <p class="card-text"></p>
+
+                <div class="row">
+                  <div class="col-9">
+                    Created At: Lorem ipsum dolor sit amet con
+                  </div>
+                  <button type="submit" class="btn btn-info col-2">Info</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div> -->
+    <!-- </div> -->
+  </body>
+</html>

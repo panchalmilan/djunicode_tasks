@@ -1,0 +1,25 @@
+.res-card {
+  width: 700px;
+
+  background-color: lightblue;
+}
+@media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 1020px) { */
+  .display-4 {
+    font-size: 45px;
+    text-align: center;
+  }
+  .res-sm {
+    font-size: 20px;
+  }
+  .form-group {
+    margin-top: -5px;
+  }
+  .div .col-md-7 {
+    background-color: green;
+  }
+  input[type='number'] {
+    /* background-color: lawngreen; */
+    width: 300px;
+  }
+}

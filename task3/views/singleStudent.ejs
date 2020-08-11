@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= student.firstName %> <%=  student.lastName %></title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/basic.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+
+  </head>
+  <body>
+    <!-- importing navbar -->
+    <%- include('partials/navbar.ejs') %>
+
+    <div class="container">
+      <div class="col mx-auto">
+        <div class="card border-secondary mt-5">
+          <div class="card-body p-4">
+            <div class="row">
+              <h1 class="card-title col-9 mt-2" style="letter-spacing: 2px;">
+                <span class="bg-light p-2"
+                  ><%= student.firstName %> <%= student.lastName %>
+                </span>
+              </h1>
+              <div class="col-3" style="font-size: 1rem;">@<%= student.slug %></div>
+            </div>
+            <p class="card-text mt-2"><% student.slug %></p>
+            <h5 class="p-2" style="font-size: 1.5rem;">English: <%= student.english %> / 100</h5>
+            <h5 class="p-2 " style="font-size: 1.5rem;">Maths: <%= student.maths %> / 100</h5>
+            <h4 class="p-2" style="font-size: 2rem;">Average: <%= student.average %> / 100</h5>
+            <div class="row" style="font-size: .8rem; margin-top: 1.5rem;">
+              <div class="col-9 ml-2" style="margin-bottom: .5rem;">
+                Created at: <%= student.createdAt %>
+              </div>
+              <div class="col-9 ml-2">
+                Modified at: <%= student.modifiedAt %>
+              </div>
+
+              <!-- buttons -->
+              <form action="/student/edit/<%= student.slug %>" method="GET" >
+                <button type="submit" class="btn btn-outline-primary btn-lg mr-4">
+                  Update
+                </button>
+              </form>
+              <form
+                action="/student/<%= student.slug %>?_method=DELETE"
+                method="POST"
+              >
+                <button type="submit" class="btn btn-danger btn-lg btn-block">
+                  Delete
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

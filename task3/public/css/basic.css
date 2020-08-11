@@ -1,0 +1,35 @@
+/* Colors
+light coral: #FF7477
+midnight blue: #0A014F
+tea green: #C2E1C2
+dark cyan: #0F8B8D
+antique ruby: #841C26
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* 
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+a:hover {
+  color: rgb(64, 13, 99);
+  text-decoration: none;
+}
+
+nav div {
+  transition: all 0.5s;
+} */

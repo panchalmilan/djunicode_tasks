@@ -1,0 +1,74 @@
+.header {
+  height: 15vh;
+  max-width: 100vw;
+  margin-bottom: 2rem;
+}
+
+/* navbar start */
+
+.navbar {
+  height: 100%;
+  /* max-width: 100vw; */
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-image: linear-gradient(to bottom right, #841c26, #841c26b9);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+  grid-template-rows: 1fr;
+  column-gap: 2rem;
+  align-items: center;
+  justify-items: center;
+
+  outline: 2px solid #841c26;
+  outline-offset: 2px;
+
+  animation: navbarAnim 0.7s ease-in;
+  animation-fill-mode: backwards;
+}
+
+.navbar:hover .nav-elem:not(:hover) {
+  transform: scale(0.95);
+}
+
+.nav-elem {
+  transition: all 0.2s;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #c2e1c2;
+}
+
+.nav-elem:hover {
+  transform: scale(1.05);
+  color: #fff;
+  transform: translateY(-2px);
+  text-shadow: 0 0.2rem 4rem rgba(0, 0, 0, 0.8);
+}
+
+@keyframes navbarAnim {
+  0% {
+    opacity: 0;
+    transform: translateX(-50vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Navbar end */
+
+/* Media Queries */
+@media only screen and (max-width: 800px) {
+  .navbar {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .navbar {
+    font-size: 1.4rem;
+  }
+}
