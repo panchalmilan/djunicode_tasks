@@ -14,6 +14,7 @@ const publicDirPath = path.join(__dirname, './public')
 // Loading Routes
 const students = require('./routes/students')
 const api_students = require('./routes/api_students')
+// issue !!!!
 
 const app = express()
 
@@ -38,6 +39,9 @@ app.get('/home', (req, res) => {
 
 // Routing student requests
 app.use('/student', students)
+
+// Routing api requests
+app.use('/api/student', api_students)
 
 app.get('/', (req, res) => {
   res.send('This may be an ERROR')
