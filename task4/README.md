@@ -15,6 +15,14 @@ npm install
 npm run start
 ```
 
+## NOTE:
+1. Initial URL
+```bash
+  127.0.0.1:3000/home
+```
+
+2. (For VS Code devs) Install REST Client plugin for using students.rest file
+
 ## Technology Stack
 NodeJs, Mongoose
 
