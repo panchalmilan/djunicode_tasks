@@ -15,6 +15,12 @@ npm install
 npm run start
 ```
 
+## NOTE:
+Initial URL: 
+```
+  127.0.0.1:3000/home
+```
+
 ## Technology Stack
 NodeJs
 
