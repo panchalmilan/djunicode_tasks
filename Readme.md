@@ -23,7 +23,7 @@
 	<li>
 		<strong><u>Task 4</u></strong>
 		<ol>
-			<li><b>Store data in DB (MySql)</b>: Status-InComplete</li>
+			<li><b>Store data in DB (mongoDB)</b>: Status-InComplete</li>
 		</ol>
 	</li>
 </ol>
